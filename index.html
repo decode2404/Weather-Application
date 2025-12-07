@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Search Section -->
+        <header class="search-section">
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button id="unit-toggle" class="unit-toggle">°F</button>
+            </div>
+            <p id="error-message" class="error-msg hidden"></p>
+        </header>
+
+        <!-- Loading Spinner -->
+        <div id="loader" class="loader hidden"></div>
+
+        <!-- Weather Content -->
+        <main id="weather-display" class="weather-content hidden">
+            <div class="current-weather">
+                <h1 id="city-name" class="city-name">City Name</h1>
+                <p id="date-time" class="date-time">--</p>
+                
+                <div class="weather-main">
+                    <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon hidden">
+                    <div class="temp-container">
+                        <span id="temperature" class="temperature">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <p id="description" class="description">--</p>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card">
+                    <span class="detail-label">Humidity</span>
+                    <span id="humidity" class="detail-value">--%</span>
+                </div>
+                <div class="detail-card">
+                    <span class="detail-label">Wind Speed</span>
+                    <span id="wind-speed" class="detail-value">-- km/h</span>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Default State / Placeholder -->
+        <div id="default-state" class="default-state">
+            <p>Start by searching for a city</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
